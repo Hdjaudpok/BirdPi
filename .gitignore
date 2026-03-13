@@ -1,0 +1,33 @@
+# Secrets
+config.env
+
+# Models (distributed via GitHub Releases)
+*.onnx
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime
+logs/
+recordings/
+*.pid
+.event_active
+.last_alert_ts
+.telegram_realtime.pid
+
+# Training artifacts
+training/dataset/
+training/results/
+training/runs/
+training/models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

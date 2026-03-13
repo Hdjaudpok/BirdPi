@@ -1,0 +1,13 @@
+/home/pi/birdpi/recordings/*.mp4
+/home/pi/birdpi/recordings/*.mkv
+/home/pi/birdpi/recordings/*.avi
+{
+    weekly
+    rotate 3
+    missingok
+    notifempty
+    compress
+    delaycompress
+    copytruncate
+    su pi pi
+}

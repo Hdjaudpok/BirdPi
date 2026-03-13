@@ -1,0 +1,17 @@
+[Unit]
+Description=Motion daemon for birdpi detection
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+User=__PI_USER__
+Group=__PI_USER__
+PIDFile=/home/__PI_USER__/birdpi/motion.pid
+ExecStart=/usr/bin/motion -c /etc/motion/motion.conf
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

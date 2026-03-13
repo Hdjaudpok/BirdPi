@@ -1,0 +1,18 @@
+[Unit]
+Description=BirdPi YouTube live stream (permanent)
+After=motion.service
+Requires=motion.service
+
+[Service]
+Type=simple
+User=__PI_USER__
+WorkingDirectory=/home/__PI_USER__/birdpi
+EnvironmentFile=/home/__PI_USER__/birdpi/config.env
+ExecStart=/home/__PI_USER__/birdpi/camera_stream.sh
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/__PI_USER__/birdpi/logs/camera_stream.log
+StandardError=append:/home/__PI_USER__/birdpi/logs/camera_stream.log
+
+[Install]
+WantedBy=multi-user.target
