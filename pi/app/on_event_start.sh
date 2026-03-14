@@ -53,7 +53,7 @@ if [[ "${TELEGRAM_REALTIME_MODE}" == "1" ]]; then
       echo "$(date -Is) killing_stale_realtime pid=${RT_PID}" >> "${EVENT_LOG}"
       kill "${RT_PID}" 2>/dev/null || true
       # Wait up to 12s for YOLO inference to finish before force kill
-      for i in $(seq 1 12); do
+      for _ in $(seq 1 12); do
         kill -0 "${RT_PID}" 2>/dev/null || break
         sleep 1
       done

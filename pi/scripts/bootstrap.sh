@@ -262,7 +262,7 @@ systemctl restart systemd-journald || true
 # --- tmpfs for recordings (avoid SD wear, data is streamed to YouTube anyway) ---
 echo "[birdpi] tmpfs for recordings"
 mkdir -p "/home/${PI_USER}/birdpi/recordings"
-echo "tmpfs /home/${PI_USER}/birdpi/recordings tmpfs nodev,nosuid,size=50M,uid=$(id -u ${PI_USER}),gid=$(id -g ${PI_USER}) 0 0" >> /etc/fstab
+echo "tmpfs /home/${PI_USER}/birdpi/recordings tmpfs nodev,nosuid,size=50M,uid=$(id -u "${PI_USER}"),gid=$(id -g "${PI_USER}") 0 0" >> /etc/fstab
 
 # --- Enable services ---
 systemctl daemon-reload
