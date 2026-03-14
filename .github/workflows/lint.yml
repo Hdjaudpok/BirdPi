@@ -16,6 +16,7 @@ jobs:
         with:
           scandir: './pi'
           additional_files: 'tools/setup.sh tools/deploy.sh'
+          severity: error
 
   python-check:
     runs-on: ubuntu-latest
