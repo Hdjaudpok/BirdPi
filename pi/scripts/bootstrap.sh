@@ -17,7 +17,7 @@ fi
 SRC_DIR="${BOOT_DIR}/birdpi"
 
 if [[ -f "${SRC_DIR}/bootstrap.env" ]]; then
-  # shellcheck disable=SC1090
+  # shellcheck disable=SC1090,SC1091
   set -a
   source "${SRC_DIR}/bootstrap.env"
   set +a
